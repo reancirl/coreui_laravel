@@ -32,6 +32,17 @@
                             </div>
                             <div class="input-group mb-3">
                               <div class="input-group-prepend">
+                                <span class="input-group-text"><i class="cil-paperclip"></i></span>
+                              </div>
+                              <select name="role_id" id="" class="form-control">
+                                <option value="">-- Select Role --</option>
+                                @foreach(\DB::table('roles')->get() as $i => $role)
+                                  <option value="{{ $role->id }}" {{ $user->roles->first()->id == $role->id ? 'selected' : '' }}>{{ $role->name }}</option>
+                                @endforeach
+                              </select>
+                            </div>
+                            <div class="input-group mb-3">
+                              <div class="input-group-prepend">
                                   <span class="input-group-text">
                                     <svg class="c-icon">
                                       <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-lock-locked"></use>
@@ -49,30 +60,7 @@
                                   </span>
                               </div>
                               <input class="form-control" type="password" placeholder="{{ __('Confirm Password') }}" name="password_confirmation" value="">
-                            </div>
-                            <div class="input-group mb-3">
-                              <div class="input-group-prepend">
-                                  <span class="input-group-text">
-                                    <svg class="c-icon">
-                                      <use xlink:href="assets/icons/coreui/free-symbol-defs.svg#cui-lock-locked"></use>
-                                    </svg>
-                                  </span>
-                              </div>
-                              <select class="form-control" name="qualification_id" id="quaification">
-                                <option value="">-- Qualification --</option>
-                                @foreach($qualifications as $i => $q)
-                                  <option value="{{ $q->id }}" {{$user->qualification_id == $q->id ? 'selected' : ''}}>{{ $q->name }}</option>
-                                @endforeach
-                              </select>
-                            </div>
-                            @foreach(\DB::table('roles')->get() as $i => $role)
-                              <div class="input-group mb-3">
-                                <div class="input-group-prepend">
-                                    <span class="input-group-text"><input type="checkbox" {{ in_array($role->id,$user_roles) ? 'checked' : '' }} value="{{ $role->name }}" name="roles[{{ ++$i }}]"></span>
-                                </div>
-                                <input class="form-control" type="text" value="{{ $role->name }}" readonly>
-                              </div>
-                            @endforeach
+                            </div>                            
                             <button class="btn btn-block btn-success mt-5" type="submit">{{ __('Save') }}</button>
                             <a href="{{ route('users.index') }}" class="btn btn-block btn-primary">{{ __('Return') }}</a> 
                         </form>

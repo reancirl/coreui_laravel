@@ -20,7 +20,6 @@
                           <tr>
                             <th>Username</th>
                             <th>E-mail</th>
-                            <th>Qualification</th>
                             <th>Roles</th>
                             <th width="5%"></th>
                             <th width="5%"></th>
@@ -31,7 +30,6 @@
                             <tr>
                               <td>{{ $user->name }}</td>
                               <td>{{ $user->email }}</td>
-                              <td>{{ $user->qualification->name ?? 'N/A' }}</td>
                               <td>
                                 @php
                                     $roles = null;
