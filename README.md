@@ -27,7 +27,8 @@ $ npm install
 $ cp .env.example .env
 
 # generate .env
-set db in .env
+
+# set db in .env
 
 # generate laravel APP_KEY
 $ php artisan key:generate
