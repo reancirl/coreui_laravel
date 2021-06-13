@@ -2,13 +2,13 @@
 
 ``` bash
 # clone the repo
-$ git clone https://github.com/coreui/coreui-free-laravel-admin-template.git my-project
-
-#remove git
-$ rm -rf .git
+$ clone this repo
 
 # go into app's directory
 $ cd my-project
+
+#remove git
+$ rm -rf .git
 
 # install app's dependencies
 $ composer install
@@ -22,6 +22,10 @@ $ npm install
 
 ``` bash
 # in your app directory
+
+# generate .env
+$ cp .env.example .env
+
 # generate laravel APP_KEY
 $ php artisan key:generate
 
