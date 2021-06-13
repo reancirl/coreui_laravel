@@ -2,7 +2,7 @@
 
 ``` bash
 # clone the repo
-$ clone this repo
+$ git clone https://github.com/reancirl/coreui_laravel.git my-project
 
 # go into app's directory
 $ cd my-project
@@ -25,6 +25,9 @@ $ npm install
 
 # generate .env
 $ cp .env.example .env
+
+# generate .env
+set db in .env
 
 # generate laravel APP_KEY
 $ php artisan key:generate
